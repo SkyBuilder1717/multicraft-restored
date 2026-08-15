@@ -20,8 +20,6 @@ local function set_inventory(player)
 	"tooltip[sethome_go;Go Home]"..
 	"image_button_exit[9.21,4.5;1,1;creative_awards.png;awards;;true;false]"..
 	"tooltip[awards;Awards]"..
-	"image_button_exit[9.21,5.5;1,1;creative_skins.png;skins;;true;false]"..
-	"tooltip[skins;Online Skins]"..
 	"image_button_exit[9.21,6.5;1,1;creative_public_home.png;sethome_public;;true;false]"..
 	"tooltip[sethome_public;Public Homes]"
 	-- Armor
@@ -50,9 +48,6 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 	end
 	if fields.awards then
 		awards.show_to(name, name, nil, false)
-	end
-	if fields.skins then
-		core.show_formspec(name, "online_skins:skins", online_skins.get_formspec(player, online_skins.current_page[name]))
 	end
 end)
 
